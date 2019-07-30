@@ -63,17 +63,43 @@ table {
 .object-city:hover {
   color: #faa519;
   .autokar-wrapper {
-    background-image: url("./img/autokar-front-hover.png");
+    background-image: url("./img/autokar-hover.png");
+  }
+  .city-name-holder {
+    background: #faa519;
   }
 
 }
 
+.object-city-warranted {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: #0071a9;
+  font-size: 21px;
+  text-align: center;
+  width: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.object-city-warranted:hover {
+  color: #faa519;
+  .autokar-wrapper-warranted {
+    background-image: url("./img/autokar-hover.png");
+  }
+  .city-name-holder {
+    background: #faa519;
+  }
+
+}
+
+
 .cityWindow {
   position: relative;
   width: 100px;
-  height: 100px;
   color: #747474;
-  border: 1px solid #747474;
+  border: 1px solid #faa519;
   background: #ffffff;
   z-index: 10;
   padding: 5px;
@@ -93,15 +119,29 @@ table {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 
-  border-bottom: 5px solid #747474;
+  border-bottom: 5px solid #faa519;
   z-index: 1;
 
 }
 
 
 .autokar-wrapper {
-  background-image: url("./img/autokar-front.png");
+  background-image: url("./img/autokar.png");
   width: 42px;
-  height: 28px;
+  height: 42px;
   background-size: cover;
+}
+
+.autokar-wrapper-warranted {
+  background-image: url("./img/autokar-warrented.png");
+  width: 42px;
+  height: 42px;
+  background-size: cover;
+}
+
+.city-name-holder {
+  color: #ffffff;
+  border-radius: 5px;
+  background: #0071a9;
+  padding: 3px;
 }

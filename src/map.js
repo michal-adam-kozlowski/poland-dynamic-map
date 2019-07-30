@@ -2,6 +2,129 @@ import React, {Component} from "react";
 import City from "./city.js";
 import "./map.scss";
 
+var transports = [
+    {
+        name: "Warszawa",
+        price: 0,
+        count: 0
+    },
+
+    {
+        name: "Katowice",
+        price: 0,
+        count: 0
+    },
+    {
+        name: "Wrocław",
+        price: 0,
+        count: 0
+    },
+    {
+        name: "Szczecin",
+        price: 50,
+        count: 0
+    },
+
+    {
+        name: "Kraków",
+        price: 100,
+        count: 0
+    },
+    {
+        name: "Białystok",
+        price: 50,
+        count: 0
+    },
+    {
+        name: "Trójmiasto",
+        price: 50,
+        count: 0
+    },
+    {
+        name: "Poznań",
+        price: 50,
+        count: 0
+    },
+    {
+        name: "Rzeszów",
+        price: 50,
+        count: 17
+
+    },
+    {
+        name: "Łódź",
+        price: 50,
+        count: 17
+
+    },
+];
+
+let giveNewProps = (arr) => {
+    arr.map((el) => {
+        if (el.name === "Warszawa") {
+            el.top = "145px";
+            el.left = "235px";
+        }
+        if (el.name === "Poznań") {
+            el.top = "135px";
+            el.left = "75px";
+        }
+        if (el.name === "Wrocław") {
+            el.top = "220px";
+            el.left = "80px";
+        }
+        if (el.name === "Łódź") {
+            el.top = "175px";
+            el.left = "175px";
+        }
+        if (el.name === "Katowice") {
+            el.top = "270px";
+            el.left = "155px";
+        }
+        if (el.name === "Kraków") {
+            el.top = "290px";
+            el.left = "220px";
+        }
+        if (el.name === "Trójmiasto") {
+            el.top = "35px";
+            el.left = "140px";
+        }
+        if (el.name === "Szczecin") {
+            el.top = "65px";
+            el.left = "-5px";
+        }
+        if (el.name === "Białystok") {
+            el.top = "50px";
+            el.left = "300px";
+        }
+        if (el.name === "Rzeszów") {
+            el.top = "275px";
+            el.left = "295px";
+        }
+        if (el.price === 0) {
+            el.text = "Brak dopłat, wyjazd gwarantowany"
+        }
+        if (el.price > 0 && el.count < 15) {
+            el.text = `Dopłata ${el.price} PLN. Wyjazd możliwy pod warunkiem zebrania się grupy min. 15 osób`
+        }
+        if (el.price > 0 && el.count >= 15) {
+            el.text = `Dopłata ${el.price} PLN. Wyjazd gwarantowany, zebrała się grupa 15 lub więcej osób`
+        }
+        if (el.count >= 15 || el.price <= 0) {
+            el.ifWarranted = true
+        }
+        if (el.count < 15 && el.price > 0) {
+            el.ifWarranted = false
+        }
+    });
+
+
+    return arr
+};
+
+giveNewProps(transports);
+console.log(transports);
+
 
 class Map extends Component {
 
@@ -9,16 +132,9 @@ class Map extends Component {
         return (
             <div className="map-wrapper">
                 <div className="map">
-                 <City top="145px" left="235px" name="Warszawa" text="Dopłata: brak, Gwarantowany wyjazd"/>
-                 <City top="135px" left="75px" name="Poznań" text="150 PLN, minimalna ilość osób: miliard"/>
-                 <City top="220px" left="80px" name="Wrocław" text="666 PLN, minimalna ilość osób: 15"/>
-                 <City top="175px" left="175px" name="Łódź" text="175 PLN, minimalna ilość osób: 1"/>
-                 <City top="270px" left="155px" name="Katowice" text="110 PLN, gwarantowany wyjazd"/>
-                 <City top="290px" left="210px" name="Kraków" text="50 PLN , minimalna ilość osób: 11"/>
-                 <City top="35px" left="140px" name="Trójmiasto" text="1000 PLN, minimalna ilość osób: 25"/>
-                 <City top="65px" left="-5px" name="Szczecin" text="200 PLN, minimalna ilość osób: miliard"/>
-                 <City top="50px" left="300px" name="Białystok" text="300 PLN, minimalna ilość osób: never"/>
-                 <City top="285px" left="300px" name="Rzeszów" text="112 PLN, minimalna ilość osób: LOL"/>
+                    {transports.map((el) =>
+                        <City top={el.top} left={el.left} name={el.name} text={el.text} ifWarranted={el.ifWarranted}/>
+                    )}
                 </div>
             </div>
         )
