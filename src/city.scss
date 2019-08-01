@@ -14,7 +14,7 @@
 .object-city:hover {
   color: #faa519;
   .autokar-wrapper {
-    background-image: url("./img/autokar-hover.png");
+    background-image: url("./img/bus-hover.svg");
   }
   .city-name-holder {
     background: #faa519;
@@ -37,7 +37,7 @@
 .object-city-warranted:hover {
   color: #faa519;
   .autokar-wrapper-warranted {
-    background-image: url("./img/autokar-hover.png");
+    background-image: url("./img/bus-hover.svg");
   }
   .city-name-holder {
     background: #faa519;
@@ -48,7 +48,7 @@
 
 .cityWindow {
   position: relative;
-  width: 100px;
+  width: 150px;
   color: #747474;
   border: 1px solid #faa519;
   background: #ffffff;
@@ -64,9 +64,9 @@
   display: block;
   position: absolute;
   top: -5px;
-  left: 50px;
-  width: 0px;
-  height: 0px;
+  left: calc(50% - 2.5px);
+  width: 0;
+  height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 
@@ -77,14 +77,14 @@
 
 
 .autokar-wrapper {
-  background-image: url("./img/autokar.png");
+  background-image: url("./img/bus-transparent.svg");
   width: 42px;
   height: 42px;
   background-size: cover;
 }
 
 .autokar-wrapper-warranted {
-  background-image: url("./img/autokar-warrented.png");
+  background-image: url("./img/bus-warranted.svg");
   width: 42px;
   height: 42px;
   background-size: cover;
@@ -94,5 +94,6 @@
   color: #ffffff;
   border-radius: 5px;
   background: #0071a9;
-  padding: 3px;
+  line-height: 21px;
+  padding: 5px;
 }
