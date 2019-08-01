@@ -57,12 +57,18 @@ var transports = [
         count: 17
 
     },
+    {
+        name: "Bydgoszcz/Toruń",
+        price: 50,
+        count: 17
+
+    },
 ];
 
 let giveNewProps = (arr) => {
     arr.map((el) => {
         if (el.name === "Warszawa") {
-            el.top = "145px";
+            el.top = "135px";
             el.left = "235px";
         }
         if (el.name === "Poznań") {
@@ -71,7 +77,7 @@ let giveNewProps = (arr) => {
         }
         if (el.name === "Wrocław") {
             el.top = "220px";
-            el.left = "80px";
+            el.left = "70px";
         }
         if (el.name === "Łódź") {
             el.top = "175px";
@@ -86,7 +92,7 @@ let giveNewProps = (arr) => {
             el.left = "220px";
         }
         if (el.name === "Trójmiasto") {
-            el.top = "35px";
+            el.top = "-5px";
             el.left = "140px";
         }
         if (el.name === "Szczecin") {
@@ -100,6 +106,10 @@ let giveNewProps = (arr) => {
         if (el.name === "Rzeszów") {
             el.top = "275px";
             el.left = "295px";
+        }
+        if (el.name === "Bydgoszcz/Toruń") {
+            el.top = "70px";
+            el.left = "120px";
         }
         if (el.price === 0) {
             el.text = "Brak dopłat, wyjazd gwarantowany"
