@@ -6,61 +6,73 @@ var transports = [
     {
         name: "Warszawa",
         price: 0,
-        count: 0
+        count: 0,
+        guarantee: 1
     },
 
     {
         name: "Katowice",
         price: 0,
-        count: 0
+        count: 0,
+        guarantee: 0
     },
     {
         name: "Wrocław",
         price: 0,
-        count: 0
+        count: 0,
+        guarantee: 1
     },
     {
         name: "Szczecin",
         price: 50,
-        count: 0
+        count: 0,
+        guarantee: 0
+
     },
 
     {
         name: "Kraków",
         price: 100,
-        count: 0
+        count: 0,
+        guarantee: 0
     },
     {
         name: "Białystok",
         price: 50,
-        count: 0
+        count: 0,
+        guarantee: 0
     },
     {
         name: "Trójmiasto",
         price: 50,
-        count: 0
+        count: 0,
+        guarantee: 0
     },
     {
         name: "Poznań",
         price: 50,
-        count: 0
+        count: 0,
+        guarantee: 0
     },
     {
         name: "Rzeszów",
         price: 50,
-        count: 17
+        count: 17,
+        guarantee: 0
 
     },
     {
         name: "Łódź",
         price: 50,
-        count: 17
+        count: 0,
+        guarantee: 1
 
     },
     {
         name: "Bydgoszcz/Toruń",
         price: 50,
-        count: 17
+        count: 17,
+        guarantee: 0
 
     },
 ];
@@ -111,8 +123,11 @@ let giveNewProps = (arr) => {
             el.top = "70px";
             el.left = "120px";
         }
-        if (el.price === 0) {
+        if (el.price === 0 && el.guarantee === 1) {
             el.text = "Brak dopłat, wyjazd gwarantowany"
+        }
+        if (el.price === 0 && el.guarantee === 0) {
+            el.text = "Brak dopłat, Wyjazd możliwy pod warunkiem zebrania się grupy min. 15 osób"
         }
         if (el.price > 0 && el.count < 15) {
             el.text = `Dopłata ${el.price} PLN. Wyjazd możliwy pod warunkiem zebrania się grupy min. 15 osób`
